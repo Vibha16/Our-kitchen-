@@ -793,6 +793,57 @@ margin: 2px;
     background:#f0f0f0;
     width:100%;
 }
+.blogs{
+    background: linear-gradient(rgba(255,255,255,.7),rgba(255,255,255,.7)), url(../images/popular-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+
+.blogs .box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.blogs .box-container .blog-box{
+    background:#fff;
+    width:35rem;
+    padding:2rem;
+    margin:2rem;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem .5rem rgba(0,0,0,.2);
+    text-align: center;
+}
+.blogs .box-container .blog-box img{
+    height:20rem;
+    width:100%;
+    object-fit: cover;
+}
+
+.blogs .box-container  .blog-box h3{
+    
+        color:#333;
+        font-size: 3rem;
+        font-weight: normal;
+    
+}
+.read-more{
+    font-size: 1.7rem;
+    padding:.7rem 4rem;
+    border-radius: 5rem;
+    margin-top: 1rem;
+    background:none;
+    color:#333;
+    cursor: pointer;
+    border:.2rem solid var(--orange);
+}
+.read-more:hover{
+    background:var(--orange);
+}
 #login_email{
     text-transform: lowercase;
 }
