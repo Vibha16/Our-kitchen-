@@ -108,7 +108,7 @@ function generateCartItems(cartItems) {
            
             </div>`
     })
-    document.querySelector('.cart-items').innerHTML = itemsHTML
+    document.querySelector('.cart-item').innerHTML = itemsHTML
     createEventListeners()
 
 
@@ -140,3 +140,8 @@ function createEventListeners() {
 }
 
 getCartItems()
+
+const checkoutButton = document.getElementById('complete-order-btn')
+checkoutButton.addEventListener('click', ()=>{
+    console.log('Clicked')
+})
