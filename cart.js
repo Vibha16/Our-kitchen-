@@ -1,10 +1,13 @@
 import { doc, deleteDoc, getFirestore, getDoc, updateDoc, query, onSnapshot, collection } from 'https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js';
 const firestore = getFirestore();
+const loadingScreen= document.querySelector('.loading')
+
 
 function getCartItems() {
     const q = query(collection(firestore, 'cart-items'))
     let cartItems = []
     const snap = onSnapshot(q, (querySnapshot) => {
+        cartItems = []
         querySnapshot.forEach((doc) => {
             cartItems.push({
                 id: doc.id,
@@ -14,7 +17,9 @@ function getCartItems() {
         })
         generateCartItems(cartItems)
         getTotalCost(cartItems)
+        loadingScreen.remove()
     })
+    return () => { snap() }
 
 }
 
@@ -25,6 +30,8 @@ function getTotalCost(items) {
     })
     document.querySelector('.total-cost-number').innerText = `Rs ${totalCost}`
 }
+
+
 
 async function decreaseCount(itemId){
     const q = query(collection(firestore, 'cart-items'))
