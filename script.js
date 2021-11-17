@@ -138,10 +138,19 @@ $(document).ready(function(){
     });
 
 });
+document.getElementById('account').addEventListener('click', function(){
+    document.querySelector('.popupAc').style.display='flex';
+})
+document.querySelector('.close2').addEventListener('click', function(){
+    document.querySelector('.popupAc').style.display='none';
+})
 
 /**
  * for login popup
  */
+
+
+
 
 document.getElementById('login').addEventListener('click', function(){
     document.querySelector('.popup').style.display='flex';
